@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-     - image: circleci/android:api-25-alpha
-    working_directory: ~/demo_android/DemoApp
+     - image: demo_android
+    working_directory: ~/DemoApp
     steps:
       - checkout
        - save_cache:
