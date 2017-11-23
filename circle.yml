@@ -6,9 +6,10 @@ jobs:
     working_directory: ~/demo_android/DemoApp/
     steps:
       - checkout
-      - run:
-          name: Run Tests
-          command: ./gradlew lint test
+       - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       
       - store_artifacts:
           path: app/build/reports
