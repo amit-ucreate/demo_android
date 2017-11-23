@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+     - image: circleci/android:api-25-alpha
+    working_directory: ~/demo_android/DemoApp/
+    steps:
+      - checkout
+      - run:
+            name: chmod permissions
+            command: chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+
