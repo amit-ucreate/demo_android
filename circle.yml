@@ -7,7 +7,5 @@ jobs:
     steps:
       - checkout
       
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
+      
 
